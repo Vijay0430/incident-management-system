@@ -1,0 +1,22 @@
+[
+  {
+    "component_id": "RDBMS_01",
+    "severity": "P0",
+    "message": "Database connection timeout"
+  },
+  {
+    "component_id": "CACHE_CLUSTER_01",
+    "severity": "P2",
+    "message": "Redis latency spike"
+  },
+  {
+    "component_id": "MCP_HOST_01",
+    "severity": "P1",
+    "message": "Host unreachable"
+  },
+  {
+    "component_id": "ASYNC_QUEUE_01",
+    "severity": "P1",
+    "message": "Queue processing delayed"
+  }
+]
