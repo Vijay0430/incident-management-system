@@ -13,6 +13,25 @@ services:
       - mongodb
       - postgres
 
+  worker:
+    build: ./backend
+
+    command: python -m app.worker
+
+    depends_on:
+      - redis
+      - mongodb
+      - postgres
+
+  frontend:
+    build: ./frontend
+
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - backend
+
   redis:
     image: redis
 
