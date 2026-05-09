@@ -5,13 +5,13 @@ from sqlalchemy.orm import sessionmaker
 
 # REDIS
 redis_client = redis.Redis(
-    host="localhost",
+    host="redis",
     port=6379,
     decode_responses=True
 )
 # MONGODB
 mongo_client = MongoClient(
-    "mongodb://localhost:27017"
+    "mongodb://mongodb:27017"
 )
 
 mongo_db = mongo_client["ims"]
@@ -19,7 +19,7 @@ mongo_db = mongo_client["ims"]
 signals_collection = mongo_db["signals"]
 
 # POSTGRESQL
-DATABASE_URL = "postgresql://admin:admin@localhost:5432/ims"
+DATABASE_URL = "postgresql://admin:admin@postgres:5432/ims"
 
 engine = create_engine(DATABASE_URL)
 

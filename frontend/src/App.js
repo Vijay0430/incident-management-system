@@ -20,7 +20,7 @@ function App() {
     try {
 
       const response = await axios.get(
-        "http://44.204.171.66:8000/incidents"
+        `${process.env.REACT_APP_API_URL}/incidents`,
       );
 
       setIncidents(response.data);
@@ -52,7 +52,7 @@ function App() {
     try {
 
       await axios.post(
-        "http://44.204.171.66:8000/rca",
+        `${process.env.REACT_APP_API_URL}/rca`,
         {
           incident_id: Number(form.incident_id),
           root_cause: form.root_cause,
@@ -81,7 +81,7 @@ function App() {
     try {
 
       await axios.put(
-        `http://44.204.171.66:8000/incidents/${incidentId}/state?state=${state}`
+        `${process.env.REACT_APP_API_URL}/incidents/${incidentId}/state?state=${state}`
       );
 
       fetchIncidents();
